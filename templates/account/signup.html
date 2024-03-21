@@ -1,0 +1,40 @@
+{% extends 'login_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block content %}
+
+<section class="fdb-block py-0">
+  <div class="container py-5 my-5" style="background-image: url({% static 'assets/img/6.svg' %});">
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-left">
+        <div class="row">
+          <div class="col">
+            <h1>Sign Up</h1>
+            <p class="lead">Welcome to Kenzo Inc. </p>
+          </div>
+        </div>
+
+        <form method="post">
+
+          {% csrf_token %}
+          {{ form|crispy }}
+
+          <div class="row mt-4">
+            <div class="col">
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

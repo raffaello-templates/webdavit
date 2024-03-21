@@ -1,0 +1,202 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% load blog_tags %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block content %}
+
+<section id="hero">
+
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+            <div>
+              <h1>Design And Development Blog</h1>
+              <h2>Tips and articles from our developers to help your business succeed.</h2>
+            </div>
+          </div>
+          <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+            <img src="{% static 'assets/img/hero-img2.png' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+
+  </section><!-- End Hero -->
+
+  <!-- ======= Blog Single Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-8 entries">
+
+          <article class="entry entry-single">
+
+            <div class="entry-img">
+              <img src="{{ post.banner.url }}" alt="" class="img-fluid">
+            </div>
+
+            <h2 class="entry-title">
+              <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="#">{{ post.author }}</a></li>
+                <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="#">{{ post.publish }}</a></li>
+                <li class="d-flex align-items-center">
+                  {% with comments.count as total_comments %}
+                    <i class="icofont-comment"></i> {{ total_comments }} Comment{{ total_comments|pluralize }}
+                  {% endwith %}
+                </li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+
+                {{ post.content|safe }}
+
+            </div>
+
+            <div class="entry-footer clearfix">
+
+              {% if user.is_authenticated %}
+
+              <div class="float-left">
+                <i class="icofont-edit"></i>
+                <ul class="cats">
+                  <li><a href="{% url 'blog:post_update' post.slug post.pk %}"><strong> Update</strong></a></li>
+                </ul>
+
+                <i class="icofont-delete"></i>
+                <ul class="tags">
+                  <li><a href="{% url 'blog:post_delete' post.pk %}"><strong> Delete</strong></a></li>
+                </ul>
+              </div>
+
+              {% endif %}
+
+              <div class="float-right share">
+                <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
+                <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
+                <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
+              </div>
+
+            </div>
+
+          </article><!-- End blog entry -->
+
+          <div class="blog-author clearfix">
+            <img src="{{ post.author.profile.image.url }}" class="rounded-circle float-left" alt="">
+            <h4>{{ post.author.first_name }} {{ post.author.last_name }}</h4>
+            <div class="social-links">
+              <a href="https://twitters.com/#"><i class="icofont-twitter"></i></a>
+              <a href="https://facebook.com/#"><i class="icofont-facebook"></i></a>
+              <a href="https://instagram.com/#"><i class="icofont-instagram"></i></a>
+            </div>
+            <p>
+              Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
+            </p>
+          </div><!-- End blog author bio -->
+
+          <div class="blog-comments">
+          {% with comments.count as total_comments %}
+            <h4 class="comments-count">
+              {{ total_comments }} Comment{{ total_comments|pluralize }}
+            </h4>
+          {% endwith %}
+
+          {% for comment in comments %}
+            <div id="comment-1" class="comment clearfix">
+              <img src="{% static 'assets/img/blog/user.png' %}" class="comment-img  float-left" alt="">
+              <h5>
+                <a href="#">{{ comment.name }}</a> 
+                <a href="#" class="reply"><i class="icofont-reply"></i> Reply</a>
+              </h5>
+              <time>{{ comment.created }}</time>
+              <p>
+                {{ comment.body|linebreaks }}
+              </p>
+            </div><!-- End comment #1 -->
+          {% empty %}
+            <div id="comment-1" class="comment clearfix">
+              <p>There are no Comments yet.</p>
+            </div>
+          {% endfor %}
+
+          {% if new_comment %}
+
+            <div id="comment-1" class="comment clearfix">
+              <p>Your Comment has been added.</p>
+            </div>
+
+          {% else %}
+
+            <div class="reply-form">
+              <h4>Leave a Reply</h4>
+              <p>Your email address will not be published. Required fields are marked * </p>
+              <form method="POST">{% csrf_token %}
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    {{ comment_form.name|as_crispy_field }}
+                  </div>
+                  <div class="col-md-6 form-group">
+                    {{ comment_form.email|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col form-group">
+                    {{ comment_form.website|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col form-group">
+                    {{ comment_form.body|as_crispy_field }}
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Post Comment</button>
+
+              </form>
+
+            </div>
+          {% endif %}
+
+          </div><!-- End blog comments -->
+
+        </div><!-- End blog entries list -->
+
+        <div class="col-lg-4">
+
+          <div class="sidebar">
+
+            <h3 class="sidebar-title">Search</h3>
+            <div class="sidebar-item search-form">
+              <form action="{% url 'blog:search_results' %}" method="GET">{% csrf_token %}
+                <input name="q" type="text">
+                <button type="submit"><i class="icofont-search"></i></button>
+              </form>
+            </div><!-- End sidebar search formn-->
+
+            <h3 class="sidebar-title">Recent Posts</h3>
+            <div class="sidebar-item recent-posts">
+
+              {% recent_posts 5 %}
+
+            </div><!-- End sidebar recent posts-->
+
+          </div><!-- End sidebar -->
+
+        </div><!-- End blog sidebar -->
+
+      </div>
+
+    </div>
+  </section><!-- End Blog Single Section --
+
+{% endblock content %}

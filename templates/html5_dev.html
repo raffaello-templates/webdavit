@@ -1,0 +1,146 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block title %}HTML5 Development{% endblock title %}
+
+{% block content %}
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+            <div>
+              <h1>HTML5 Development</h1>
+              <h2>Productive, reliable and engaging HTML5 development to maximize your business outcomes.</h2>
+            </div>
+          </div>
+          <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+            <img src="{% static 'assets/img/banner_html.webp' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+
+  </section><!-- End Hero -->
+
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our Services</h2>
+        <p>HTML5 Development</p>
+      </div>
+
+      <div class="row" data-aos="fade-left">
+
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+            <i class="ri-code-box-line" style="color: #ffbb2c;"></i>
+            <h3><a href="{% url 'html5dev' %}">HTML5 Development</a></h3>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </section><!-- End Features Section -->
+
+  <!-- ======= Details Section ======= -->
+  <section id="details" class="details">
+    <div class="container">
+
+      <div class="row content">
+        <div class="col-md-5" data-aos="fade-right">
+          <img src="{% static 'assets/img/features-5.svg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-7 pt-5" data-aos="fade-up">
+          <h3>HTML5 Developers For Hire</h3>
+          <p>
+            Our HTML developers have strong experience with responsive implementations, Bootstrap and HTML5/CSS3 for commercial applications and HTML5 based mobile apps.
+          </p>
+          <ul>
+            <li><i class="icofont-check"></i> PSD to HTML/HTML5 Conversion</li>
+            <li><i class="icofont-check"></i> Twitter Bootstrap</li>
+            <li><i class="icofont-check"></i> jQuery/Prototype/JS Implementation</li>
+            <li><i class="icofont-check"></i> Responsive HTML Implementations</li>
+            <li><i class="icofont-check"></i> HTML5 Re-Coding Services</li>
+            <li><i class="icofont-check"></i> Offshore Android Development Teams</li>
+            <li><i class="icofont-check"></i> Custom development service</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+          <img src="{% static 'assets/img/details-2.png' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+          <h3>We Develop High Performing HTML Applications To Propel Your Business</h3>
+          <p>
+            Our HTML/HTML5 developers have strong experience in delivering high quality web pages, starting from converting your designs into HTML to delivering HTML5 based mobile apps. Our team has delivered hundreds of projects in the past 12+ years, as expert web and HTML developers.
+          </p>
+          <p>
+            We are preferred HTML5 development partners for many startups, enterprises, digital agencies, and businesses from all around the world.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Details Section -->
+
+  <!-- ======= App Features Section ======= -->
+  <section id="afeatures" class="afeatures">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Advantages</h2>
+        <p>What makes us stand out.</p>
+      </div>
+
+      <div class="row no-gutters">
+        <div class="col-xl-7 d-flex align-items-stretch order-2 order-lg-1">
+          <div class="content d-flex flex-column justify-content-center">
+            <div class="row">
+              <div class="col-md-6 icon-box" data-aos="fade-up">
+                <i class="bx bx-terminal"></i>
+                <h4>Full-Cycle Services</h4>
+                <p>
+                    We provide full-cycle HTML development services to deliver a highly functional custom tailored solution to maximize your business outcomes.
+                </p>
+              </div>
+              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="bx bx-code-alt"></i>
+                <h4>Domain Expertise</h4>
+                <p>
+                    Our HTML developers have experience working on hundreds of projects across various industries. Thus, being an added advantage so you get exactly what you need.
+                </p>
+              </div>
+              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="bx bx-git-branch"></i>
+                <h4>Agility</h4>
+                <p>
+                    Our HTML developers strive to achieve maximum effect by following iterative approach that accelerates the delivery of business value through a process of continuous planning and feedback.
+                </p>
+              </div>
+              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                <i class="bx bx-shield-x"></i>
+                <h4>Strong Skillset</h4>
+                <p>
+                    With talented HTML developers on board, our HTML development company is capable of executing most complex and demanding projects, covering aspects for performance, scalability and security.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="image col-xl-5 d-flex align-items-stretch justify-content-center order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+          <img src="{% static 'assets/img/img2.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End App Features Section -->
+
+{% endblock content %}

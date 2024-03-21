@@ -1,0 +1,105 @@
+{% extends 'form_base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}Request a Quote{% endblock title %}
+
+{% block content %}
+
+<section id="hero">
+
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+            <div>
+              <h1>Contact Us</h1>
+              <h2>Request a Quote</h2>
+            </div>
+          </div>
+          <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+            <img src="{% static 'assets/img/hero-img4.png' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+    </div>
+  
+</section><!-- End Hero -->
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Tell us about your Project</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+          <div class="info">
+            <div class="address">
+              <i class="icofont-google-map"></i>
+              <h4>Location:</h4>
+              <p>3772 mulkey cir, Marietta ga 30008</p>
+            </div>
+
+            <div class="email">
+              <i class="icofont-envelope"></i>
+              <h4>Email:</h4>
+              <p>kennyokans@hotmail.com</p>
+            </div>
+
+            <div class="phone">
+              <i class="icofont-phone"></i>
+              <h4>Call:</h4>
+              <p>+1 678 314 6519</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+
+          <form method="post" action="{% url 'quote' %}" class="email-form">
+            {% csrf_token %}
+
+            <div class="form-row">
+              <div class="col-md-6 form-group">
+                {{ form.name|as_crispy_field }}
+              </div>
+              <div class="col-md-6 form-group">
+                {{ form.email|as_crispy_field }}
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-6 form-group">
+                {{ form.company|as_crispy_field }}
+              </div>
+              <div class="col-md-6 form-group">
+                {{ form.phone|as_crispy_field }}
+              </div>
+            </div>
+
+            <div class="form-group">
+              {{ form.message|as_crispy_field }}
+            </div>
+            
+            <div class="text-center"><button type="submit">Send Message</button></div>
+
+            {% include 'messages.html' %}
+
+          </form>
+
+        </div>
+
+      </div>
+      
+
+    </div>
+</section><!-- End Contact Section -->
+
+{% endblock content %}

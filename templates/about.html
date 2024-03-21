@@ -1,0 +1,215 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block content %}
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+            <div>
+              <h1>Company Overview</h1>
+              <h2>Since our inception in 2008, we have been delivering web and software development services. We combine our expertise and proven methodologies to deliver high quality software solutions.</h2>
+            </div>
+          </div>
+          <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+            <img src="{% static 'assets/img/peps.png' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+
+  </section><!-- End Hero -->
+
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our Services</h2>
+        <p>Diverse Services</p>
+      </div>
+
+      <div class="row" data-aos="fade-left">
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+            <i class="ri-code-box-line" style="color: #ffbb2c;"></i>
+            <h3><a href="{% url 'softwaredev' %}">Software Development</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <i class="ri-html5-line" style="color: #5578ff;"></i>
+            <h3><a href="{% url 'webdev' %}">Web Development</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+            <i class="ri-smartphone-line" style="color: #e80368;"></i>
+            <h3><a href="{% url 'mobiledev' %}">Mobile App Development</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+            <i class="ri-stack-line" style="color: #11dbcf;"></i>
+            <h3><a href="{% url 'wordpressdev' %}">Wordpress Development</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+            <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+            <h3><a href="{% url 'drupaldev' %}">Drupal Development</a></h3>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </section><!-- End Features Section -->
+
+  <!-- ======= Details Section ======= -->
+  <section id="details" class="details">
+    <div class="container">
+
+      <div class="row content">
+        <div class="col-md-4" data-aos="fade-right">
+          <img src="{% static 'assets/img/intro-img.svg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-8 pt-4" data-aos="fade-up">
+          <h3>We Shape Your Ideas Into Reality</h3>
+          <p>
+            Webdavit is a full-service web and software development firm that specializes in custom web, mobile and enterprise applications. We develop results-driven custom web applications, website design and custom software tailored to individual client’s needs to improve business outcomes and generate extra value.
+          </p>
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+          <img src="{% static 'assets/img/scrum.svg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+          <h3>550+ Projects For Startups, Small Businesses, and Enterprises</h3>
+          <p>
+            We leverage our knowledge and expertise to deliver software solutions that enable you to generate revenue streams, streamline business operations, and achieve your digital ambitions.
+          </p>
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="col-md-4" data-aos="fade-right">
+          <img src="{% static 'assets/img/features-2.svg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-8 pt-5" data-aos="fade-up">
+          <h3>A True Business Partner</h3>
+          <p>
+            Webdavit is an agency that builds effective web & mobile solutions for Startups, Small Businesses and Enterprise. We offer flexible engagement models to suit your business needs. We have an in-house team of employees that gives you reliability and assurance of steady quality and business continuity.
+          </p>
+          <p>
+            We have been operating since 2008, have extensive Web application, Mobile application development and consulting experience, and have worked for clients in different parts of the world. We provide high-tech software outsourcing services for small and medium size enterprises.
+          </p>
+          <p>
+            We offer a consulting-led, Web Development, Web Design, Software Product Development, Search Engine Marketing and Website Testing Services. Our engagement models are flexible, scalable, secure and custom defined based on your specific business need and situation.
+          </p>
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+          <img src="{% static 'assets/img/details-4.png' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+          <h3>What We Do</h3>
+          <ul>
+            <li><i class="icofont-check"></i> Web Design & Development</li>
+            <li><i class="icofont-check"></i> Custom Web Applications</li>
+            <li><i class="icofont-check"></i> Web & Enterprise Portals</li>
+            <li><i class="icofont-check"></i> Content Management Systems (Drupal, WordPress)</li>
+            <li><i class="icofont-check"></i> Open source Technologies (PHP, Laravel , Python, CodeIgniter, CakePHP, JSON)</li>
+            <li><i class="icofont-check"></i> Front end Development (Angular JS, Node JS, Bootsrap, HTML, CSS)</li>
+            <li><i class="icofont-check"></i> Mobile Applications (iOS, Android, Windows)</li>
+            <li><i class="icofont-check"></i> E-Commerce Development</li>
+            <li><i class="icofont-check"></i> Dedicated Developers</li>
+            <li><i class="icofont-check"></i> Open source Technologies (PHP, Laravel , Python, CodeIgniter, CakePHP, JSON)</li>
+            <li><i class="icofont-check"></i> Cloud Solutions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="col-md-4" data-aos="fade-right">
+          <img src="{% static 'assets/img/chatting.svg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-8 pt-5" data-aos="fade-up">
+          <h3>Software Development Company That Builds To Propel your Business</h3>
+          <p>
+            We are your One-Stop vendor. From requirements specification, creating wireframes, architecture design, UX, coding, testing, to product support and maintenance, we have the expertise and skills to handle it all.
+          </p>
+          <p>
+            We ensure project success by providing a collaborative team environment and an agile workflow to deliver quality work in quick turn-around timeframes. that meet customers’ needs, business and budget expectations.
+          </p>
+          <p>
+            We understand that our success is measured by the success of our clients, so we provide solutions that add real value to their business.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Details Section -->
+
+  <!-- ======= App Features Section ======= -->
+  <section id="afeatures" class="afeatures">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Advantages</h2>
+        <p>What makes us stand out.</p>
+      </div>
+
+      <div class="row no-gutters">
+        <div class="col-xl-7 d-flex align-items-stretch order-2 order-lg-1">
+          <div class="content d-flex flex-column justify-content-center">
+            <div class="row">
+              <div class="col-md-6 icon-box" data-aos="fade-up">
+                <i class="bx bx-terminal"></i>
+                <h4>Full-Cycle Services</h4>
+                <p>
+                    We provide full-cycle web and software development services to deliver a highly functional custom tailored solution to maximize your business outcomes.
+                </p>
+              </div>
+              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="bx bx-code-alt"></i>
+                <h4>Domain Expertise</h4>
+                <p>
+                    Our business analysts and developers have experience working on hundreds of projects across various industries. Being one of the leading software development company, we provide exactly what you need.
+                </p>
+              </div>
+              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="bx bx-git-branch"></i>
+                <h4>Agility</h4>
+                <p>
+                    Custom Software Development that follows iterative approach to accelerate the delivery of business value through a process of continuous planning and feedback.
+                </p>
+              </div>
+              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                <i class="bx bx-shield-x"></i>
+                <h4>Strong Skillset</h4>
+                <p>
+                    With talented and experienced developers on board, our development team is capable of executing most complex and demanding projects, covering aspects for performance, scalability and security.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="image col-xl-5 d-flex align-items-stretch justify-content-center order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+          <img src="{% static 'assets/img/features.svg' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End App Features Section -->
+
+{% endblock content %}

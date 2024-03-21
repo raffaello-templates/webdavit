@@ -1,0 +1,40 @@
+{% extends 'login_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+
+    <!-- Forms 5 -->
+    <section class="fdb-block py-0">
+      <div class="container py-5 my-5" style="background-image: url({% static 'assets/img/4.svg' %});">
+        <div class=" row justify-content-end">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left">
+            <div class="fdb-box">
+              <div class="row">
+                <div class="col">
+                  <h1>Log In</h1>
+                  <p class="lead">Welcome to Kenzo Inc.</p>
+                </div>
+              </div>
+              
+              <form method="post">
+
+                {% csrf_token %}
+                {{ form|crispy }}
+                <p class="text-right"><a href="{% url 'account_reset_password' %}">Recover Password</a></p>
+                <button class="btn btn-secondary" type="submit">Log In</button>
+
+              </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

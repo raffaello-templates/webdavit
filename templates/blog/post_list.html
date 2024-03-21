@@ -1,0 +1,131 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% load blog_tags %}
+
+{% block title %}Blog{% endblock title %}
+
+{% block content %}
+
+<section id="hero">
+
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+          <div>
+            <h1>Design And Development Blog</h1>
+            <h2>Tips and articles from our developers to help your business succeed.</h2>
+          </div>
+        </div>
+        <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+          <img src="{% static 'assets/img/hero-img2.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+
+<!-- ======= Blog Section ======= -->
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+
+      <div class="col-lg-8 entries">
+
+        {% for post in posts %}
+
+          <article class="entry">
+            
+            {% if post.banner %}
+              <div class="entry-img">
+                <img src="{{ post.banner.url|default_if_none:'/banners/blog-1.jpg' }}" alt="" class="img-fluid">
+              </div>
+            {% endif %}
+
+            <h2 class="entry-title">
+              <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="#">{{ post.author.first_name }} {{ post.author.last_name }}</a></li>
+                <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="#">{{ post.publish }}</a></li>
+                <li class="d-flex align-items-center">
+                  {% with post.comments.count as total_comments %}
+                    <i class="icofont-comment"></i> {{ total_comments }} Comment{{ total_comments|pluralize }}
+                  {% endwith %}
+                </li>
+              </ul>
+            </div>
+
+            
+
+          </article><!-- End blog entry -->
+
+        {% endfor %}
+
+        <div class="blog-pagination">
+          {% if is_paginated %}
+            <ul class="justify-content-center">
+              {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}"><i class="icofont-rounded-left"></i></a></li>
+              {% else %}
+                <li class="disabled"><i class="icofont-rounded-left"></i></li>
+              {% endif %}
+              {% for i in paginator.page_range %}
+                {% if page_obj.num == i %}
+                  <li class="active">{{ i }}</li>
+                {% else %}
+                  <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+              {% endfor %}
+              {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}"><i class="icofont-rounded-right"></i></a></li>
+              {% else %}
+                <li class="disabled"><i class="icofont-rounded-right"></i></li>
+              {% endif %}
+            </ul>
+          {% endif %}
+          </div>
+
+      </div><!-- End blog entries list -->
+
+      <div class="col-lg-4">
+
+        <div class="sidebar">
+
+          {% if user.is_authenticated %}
+            <h3 class="sidebar-title"><a href="{% url 'blog:new_post' %}" class="btn-c">Create a Post</a></h3>
+          {% endif %}
+
+          <h3 class="sidebar-title">Search</h3>
+          <div class="sidebar-item search-form">
+            <form action="{% url 'blog:search_results' %}" method="GET">{% csrf_token %}
+              <input name="q" type="text">
+              <button type="submit"><i class="icofont-search"></i></button>
+            </form>
+          </div><!-- End sidebar search formn-->
+
+          <h3 class="sidebar-title">Recent Posts</h3>
+          <div class="sidebar-item recent-posts">
+
+            {% recent_posts 5 %}
+
+          </div><!-- End sidebar recent posts-->
+
+        </div><!-- End sidebar -->
+
+      </div><!-- End blog sidebar -->
+
+    </div>
+
+  </div>
+</section><!-- End Blog Section -->
+
+</main><!-- End #main -->
+
+{% endblock content %}

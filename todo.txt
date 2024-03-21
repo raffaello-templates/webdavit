@@ -1,0 +1,7 @@
+
+pip freeze > requirements.txt
+create default avatar for reply
+change domain name for sites
+add sessions
+
+prepare for deployment

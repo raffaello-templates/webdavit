@@ -1,0 +1,154 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<section id="hero">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+        <div data-aos="zoom-out">
+          <h1>We Build Websites And Software</h1>
+          <h2>That helps you build business success</h2>
+        </div>
+      </div>
+      <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+        <img src="{% static 'assets/img/hero-img.png' %}" class="img-fluid animated" alt="">
+      </div>
+    </div>
+  </div>
+
+  <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+    <defs>
+      <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+    </defs>
+    <g class="wave1">
+      <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+    </g>
+    <g class="wave2">
+      <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+    </g>
+    <g class="wave3">
+      <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+    </g>
+  </svg>
+
+</section><!-- End Hero -->
+
+
+
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Services</h2>
+          <p>Diverse Services</p>
+        </div>
+
+        <div class="row" data-aos="fade-left">
+          <div class="col-lg-3 col-md-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+              <i class="ri-code-box-line" style="color: #ffbb2c;"></i>
+              <h3><a href="">Software Development</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+              <i class="ri-html5-line" style="color: #5578ff;"></i>
+              <h3><a href="">Web Development</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+              <i class="ri-smartphone-line" style="color: #e80368;"></i>
+              <h3><a href="">Mobile App Development</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+              <i class="ri-team-line" style="color: #e361ff;"></i>
+              <h3><a href="">Staff Augumentation</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
+              <i class="ri-database-2-line" style="color: #47aeff;"></i>
+              <h3><a href="">Machine Learning & AI</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+              <i class="ri-service-line" style="color: #ffa76e;"></i>
+              <h3><a href="">Startup Development</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+              <i class="ri-stack-line" style="color: #11dbcf;"></i>
+              <h3><a href="">Wordpress Development</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+              <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+              <h3><a href="">Drupal Development</a></h3>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-xl-5 col-lg-6" data-aos="fade-right">
+          <img src="{% static 'assets/img/details-1.png' %}" class="img-fluid" alt="">
+          
+        </div>
+
+        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
+          <h3>Results-driven Design & Web Development.</h3>
+          <p>We build web and software products, solutions, and systems that improve the way you do business.</p>
+
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="bx bx-fingerprint"></i></div>
+            <h4 class="title"><a href="">Bespoke Software Services</a></h4>
+            <p class="description">We are your full-service software development partner, capable of designing, developing, and maintaining software and web applications.</p>
+          </div>
+
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="bx bx-gift"></i></div>
+            <h4 class="title"><a href="">Reliable</a></h4>
+            <p class="description">We deliver high-quality solutions by combining technology expertise, business domain knowledge, and proven methodologies.</p>
+          </div>
+
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="bx bx-atom"></i></div>
+            <h4 class="title"><a href="">Guaranteed Success</a></h4>
+            <p class="description">We believe our success is in our client’s success, so we just do great work and revolve our development process entirely around your needs.</p>
+          </div>
+
+          <div class="icon-box text-center text-lg-left">
+            <a href="{% url 'quote' %}" class="btn-c">Request a Consultation</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+{% endblock content %}

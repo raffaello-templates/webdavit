@@ -1,0 +1,9 @@
+
+{% for post in latest_posts %}
+  <div class="post-item clearfix">
+    <img src="{{ post.banner.url }}" alt="">
+    <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+    <time>{{ post.publish }}</time>
+  </div>
+{% endfor %}
+
